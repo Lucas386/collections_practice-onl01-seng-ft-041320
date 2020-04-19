@@ -27,17 +27,21 @@ def find_a(array)
     word[0] == "a"
   end
 end
-def sum_array_inject(array)
-    array.inject do |sum,number|
-        sum + number
+
+def sum_array(array)
+  sum = 0
+  array.each do |num|
+    sum+=num
+  end
+  sum
+end 
+
+def add_s(array)
+  array.collect do |word|
+    if array[1] == word
+      word
+    else
+      word + "s"
     end
-end
-def add_s_collect(array)
-      array.each_with_index.collect do |word,index|
-        if index != 1
-          word = word + "s"
-        else
-          word = word
-        end
   end
 end
